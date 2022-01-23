@@ -4,7 +4,6 @@
       v-model="drawer"
       app
     >
-      <!--  -->
     </v-navigation-drawer>
 
     <v-app-bar app>
@@ -14,7 +13,6 @@
     </v-app-bar>
 
     <v-main>
-      <!--  -->
     </v-main>
   </v-app>
 </template>
