@@ -1,14 +1,13 @@
 <template>
   <v-app id="inspire">
     <v-navigation-drawer
-      class="d-none d-sm-flex"
+      class="d-flex flex-row align-center"
       v-model="drawer"
       fixed
       temporary
       app
     >
       <v-list nav>
-        <!-- active-class="deep-purple--text text--accent-4" -->
         <v-list-item-group>
           <v-list-item v-for="(item, key) in this.routes" :key="key">
             <v-list-item-content @click="routeTo(item.path, item.title)">
@@ -19,12 +18,15 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app>
+    <v-app-bar app class="green lighten-1 d-flex justify-center">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title v-text='text'></v-toolbar-title>
+      <v-toolbar-title>
+        <h1 class="white--text">Opd Saveliy</h1>
+      </v-toolbar-title>
     </v-app-bar>
 
     <v-main>
+      <router-view />
     </v-main>
   </v-app>
 </template>
@@ -35,7 +37,6 @@ export default {
   data: () => ({
     drawer: false,
     dialog: false,
-    text:'Главная',
     routes: [
       {
         title: "Главная",
@@ -57,7 +58,7 @@ export default {
       {
         title: "Презентация",
         path: "/pres",
-      }
+      },
     ],
   }),
   methods: {
@@ -67,10 +68,20 @@ export default {
       this.text = title;
     },
   },
-  computed: {
-  },
+  computed: {},
 };
 </script>
 <style scoped>
+h1 {
+  font-family: Kopenhagen;
+  font-size: 40px;
+  font-weight: 300;
+}
+.v-app-bar {
+  width: 100%;
+}
+#inspire {
+  height: 75px;
+}
 </style>
 
