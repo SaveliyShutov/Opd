@@ -18,14 +18,16 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app class="green lighten-1 d-flex justify-center">
+    <v-app-bar app class="green lighten-1">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-spacer></v-spacer>
       <v-toolbar-title>
         <h1 class="white--text">Opd Saveliy</h1>
       </v-toolbar-title>
+      <v-spacer></v-spacer>
     </v-app-bar>
 
-    <v-main>
+    <v-main class="">
       <router-view />
     </v-main>
   </v-app>
